@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <functional>
+#include <vector>
 
 // Command structs
 struct Command {

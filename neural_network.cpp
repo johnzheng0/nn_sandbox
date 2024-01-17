@@ -1,8 +1,5 @@
 #include "config.h"
 #include "neural_network.h"
-#include <iostream>
-#include <algorithm>
-#include <random>
 
 std::default_random_engine rng(RANDOM_SEED);
 

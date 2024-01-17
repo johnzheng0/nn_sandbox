@@ -3,6 +3,8 @@
 
 #include <vector>
 #include <cmath>
+#include <algorithm>
+#include <random>
 
 // A datapoint for a dataset that contains features associated with a class
 struct DataInstance {
