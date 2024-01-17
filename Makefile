@@ -1,7 +1,9 @@
+DOTC = .cpp
+DOTH = .h
+
 PROG = main
 LINK = neural_network commands
-HED = $(addsuffix .h, $(LINK)) 
-SRC = ${PROG}.cpp $(addsuffix .cpp, $(LINK)) 
+SRC = ${PROG}${DOTC} $(addsuffix ${DOTC}, $(LINK)) 
 OBJ = ${SRC:.cpp=.o}
 
 BINDIR = /usr/bin
@@ -17,10 +19,10 @@ CFLAGS = -Wall -Wextra ${INCS}
 ${PROG}: ${OBJ} 
 	${CC} ${OBJ} -o ${PROG} ${LDFLAGS}
 
-${PROG}.o: ${PROG}.cpp config.h
+${PROG}.o: ${PROG}${DOTC} config${DOTH}
 	${CC} ${CFLAGS} -c $<
 
-%.o: %.cpp %.h
+%.o: %${DOTC} %${DOTH}
 	${CC} ${CFLAGS} -c $<
 
 clean:
